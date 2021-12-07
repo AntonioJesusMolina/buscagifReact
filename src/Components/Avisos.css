@@ -1,0 +1,7 @@
+#divp {
+    margin: 5% 20% 5% 20%;
+    background-color: rgba(240, 248, 255, 0.747);
+    border: 5px solid black;
+    padding: 0% 5% 0% 5%;
+    visibility: hidden;
+  }

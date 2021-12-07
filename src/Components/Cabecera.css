@@ -1,0 +1,17 @@
+#entrada {
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-right: 20%;
+}
+#input {
+  background: no repeat center center fixed;
+  background-color: rgba(130, 187, 236, 0.657);
+  border-radius: 5px;
+}
+#boton,
+#boton2,
+#boton3,
+#boton4 {
+  background-color: rgb(113, 164, 246);
+  border-radius: 5px;
+}
