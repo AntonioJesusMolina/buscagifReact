@@ -1,17 +1,24 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Cabecera from "./Components/Cabecera";
+import { useState } from "react";
+import { AddCategory } from "./Components/AddCategory";
+import GifGrid from "./Components/GifGrid";
+import { myContext } from "./Components/myContext";
 
 function App() {
+  const [txt, setText] = useState({});
   return (
-    <div className="App">
-      <header id="cabecera">
-        <div id="cab">
-          <h1 id="titulo">BUSCADOR DE GIFS</h1>
-        </div>
-      </header>
-      <Cabecera></Cabecera>
-    </div>
+    <myContext.Provider value={{ txt, setText }}>
+      <div className="App">
+        <header id="cabecera">
+          <div className="jumbotron text-center">
+            <h1 id="titulo">BUSCADOR DE GIFS</h1>
+          </div>
+        </header>
+        <AddCategory></AddCategory>
+        <GifGrid></GifGrid>
+        <hr></hr>
+      </div>
+    </myContext.Provider>
   );
 }
 
