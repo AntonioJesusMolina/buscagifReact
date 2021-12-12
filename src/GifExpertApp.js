@@ -7,7 +7,11 @@ export const GifExpertApp = () => {
 
   return (
     <>
-      <h2>GifExpertApp</h2>
+    <blockquote class="blockquote text-center">
+        <h2>BUSCADOR DE GIFS</h2>
+        
+    </blockquote>
+      
       <AddCategory setCategories={setCategories} />
       <hr />
 
