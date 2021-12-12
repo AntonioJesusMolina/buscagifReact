@@ -1,3 +1,5 @@
+
+
 export const getGifs = async (category) => {
   let url = "https://api.giphy.com/v1/gifs/search?api_key=";
   let apiKey = "Z4PAQTsExKW2vumTYlaLJ3pKdZ2Ksffw"; //api_key=Z4PAQTsExKW2vumTYlaLJ3pKdZ2Ksffw&q=dog&limit=25&offset=0&rating=g&lang=en
