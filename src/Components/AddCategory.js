@@ -20,7 +20,7 @@ export const AddCategory = ({ setCategories }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div class="row bg justify-content-center">
-        <div class="col-sm-4 bg-white">
+        <div class="col-sm-4">
           <div class="input-group mb-3" >
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Palabra</span>
