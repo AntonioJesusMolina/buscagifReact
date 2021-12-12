@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { myContext } from "./myContext";
+import { Formik, Field } from "formik";
 
 export const AddCategory = ({}) => {
   const [inputValue, setInputValue] = useState(""); // ''
@@ -13,7 +14,7 @@ export const AddCategory = ({}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (inputValue.trim().length > 2) {
+    if (inputValue.trim().length > 1) {
       setCategories((cats) => [inputValue, ...cats]);
       setInputValue("");
     }
@@ -30,6 +31,9 @@ export const AddCategory = ({}) => {
               </span>
               <input
                 type="text"
+                required="required"
+                pattern="[a-zA-Z]*"
+                inputmode="string"
                 value={inputValue}
                 placeholder="Introduzca palabra"
                 onChange={handleInputChange}
