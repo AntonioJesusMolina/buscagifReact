@@ -1,31 +1,34 @@
-import React from "react";
-import { useState, useContext, useRef } from "react";
-import { unstable_concurrentAct } from "react-dom/cjs/react-dom-test-utils.production.min";
-import { myContext } from "./myContext";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-export const AddCategory = () => {
-  const nom = useRef(null);
-  const { txt, setText } = useContext(myContext);
-  console.log("Estamos en addcategory con el valor del context", txt);
+export const AddCategory = ({ setCategories }) => {
+  const [inputValue, setInputValue] = useState(""); // ''
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submit hecho");
+
+    if (inputValue.trim().length > 2) {
+      setCategories((cats) => [inputValue, ...cats]);
+      setInputValue("");
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <div class="form-group">
-        <label for="usr"></label>
-        <input
-          type="text"
-          ref={nom}
-        
-          onChange={() => {
-            setText({ ...txt, palabra: nom.current.value });
-          }}
-        ></input>
-      </div>
+      <input
+        type="text"
+        value={inputValue}
+        placeholder="Introduzca una palabra"
+        onChange={handleInputChange}
+      />
     </form>
   );
+};
+
+AddCategory.propTypes = {
+  setCategories: PropTypes.func.isRequired,
 };
