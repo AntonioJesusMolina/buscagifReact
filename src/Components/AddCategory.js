@@ -5,7 +5,7 @@ import { Formik, Field } from "formik";
 
 export const AddCategory = ({}) => {
   const [inputValue, setInputValue] = useState(""); // ''
-  const { setCategories } = useContext(myContext);
+  const { categories, setCategories } = useContext(myContext);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -15,7 +15,7 @@ export const AddCategory = ({}) => {
     e.preventDefault();
 
     if (inputValue.trim().length > 1) {
-      setCategories((cats) => [inputValue, ...cats]);
+      setCategories((categories) => [...categories, inputValue]);
       setInputValue("");
     }
   };
