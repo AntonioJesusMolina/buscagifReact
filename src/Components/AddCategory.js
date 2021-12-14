@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { myContext } from "./myContext";
-import { Formik, Field } from "formik";
+
 
 export const AddCategory = ({}) => {
   const [inputValue, setInputValue] = useState(""); // ''

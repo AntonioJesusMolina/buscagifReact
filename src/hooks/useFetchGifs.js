@@ -15,7 +15,7 @@ export const useFetchGifs = () => {
         data: imgs,
       });
     });
-  }, [categories]);
+  }, []);
 
   return state;
 };
